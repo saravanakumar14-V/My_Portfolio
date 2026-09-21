@@ -1,0 +1,29 @@
+/* GlassSurface Component Styles */
+
+.glass {
+  background-color: var(--color-bg-glass);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.light {
+  backdrop-filter: blur(var(--blur-sm));
+  -webkit-backdrop-filter: blur(var(--blur-sm));
+  background-color: rgba(var(--color-bg-primary-rgb), 0.6);
+}
+
+.heavy {
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  background-color: rgba(var(--color-bg-primary-rgb), 0.85);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Fallback for browsers that do not support backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  .glass {
+    background-color: var(--color-bg-elevated);
+  }
+}

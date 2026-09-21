@@ -1,0 +1,107 @@
+/* ProjectCard Component Styles */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border-subtle);
+  transition: border-color var(--duration-normal) var(--ease-out-cubic),
+              transform var(--duration-normal) var(--ease-out-cubic);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-4px);
+}
+
+/* ── Image ──────────────────────────────────────────────────── */
+.link {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg-elevated); /* placeholder color */
+}
+
+.image {
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay-dark);
+  opacity: 0.1;
+  transition: opacity var(--duration-normal) var(--ease-out-cubic);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.card:hover .overlay {
+  opacity: 0;
+}
+
+/* ── Content ────────────────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+
+.title {
+  margin-top: var(--space-1);
+}
+
+.titleLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.titleLink::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* makes the whole card clickable for the title link */
+}
+
+.tagline {
+  flex: 1;
+  margin-bottom: var(--space-4);
+}
+
+/* ── Tech Stack ─────────────────────────────────────────────── */
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+.techItem {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  background-color: var(--color-bg-primary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}

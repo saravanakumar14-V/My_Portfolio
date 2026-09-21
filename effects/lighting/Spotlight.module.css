@@ -1,0 +1,19 @@
+/* Spotlight Component Styles */
+
+.spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998; /* Just behind the custom cursor */
+  will-change: transform;
+  transform: translate(var(--x, -1000px), var(--y, -1000px));
+  background: radial-gradient(
+    circle closest-side,
+    var(--spotlight-color),
+    transparent 100%
+  );
+  opacity: var(--dir-ambient-intensity, 0.15);
+  mix-blend-mode: screen;
+  transition: opacity 1s ease;
+}

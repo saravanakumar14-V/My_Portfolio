@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" fill="#040814" />
+  <rect x="50" y="40" width="340" height="40" rx="6" fill="#081024" stroke="rgba(103, 217, 255, 0.3)" />
+  <text x="70" y="65" fill="#67D9FF" font-family="monospace" font-size="12" font-weight="600">SHEiLD // EMERGENCY DISPATCH LOGS</text>
+  <rect x="50" y="110" width="700" height="430" rx="10" fill="#050C1B" stroke="rgba(255, 255, 255, 0.05)" />
+  <text x="80" y="160" fill="#F87171" font-family="monospace" font-size="12">&gt; [ALERT TRIGGERED] One-Tap SOS Hardware Event Received</text>
+  <text x="80" y="200" fill="#34D399" font-family="monospace" font-size="11">&gt; GPS Payload Packaged: Accuracy ±2.4m</text>
+  <text x="80" y="240" fill="#A0B4D8" font-family="monospace" font-size="11">&gt; Dispatching SMS Webhooks to 3 Pre-Configured Emergency Contacts...</text>
+  <text x="80" y="280" fill="#34D399" font-family="monospace" font-size="11">&gt; Contact #1 (Family): Delivered (HTTP 200)</text>
+  <text x="80" y="315" fill="#34D399" font-family="monospace" font-size="11">&gt; Contact #2 (Emergency Services): Delivered (HTTP 200)</text>
+  <text x="80" y="350" fill="#34D399" font-family="monospace" font-size="11">&gt; Contact #3 (Helpline): Delivered (HTTP 200)</text>
+  <text x="80" y="400" fill="#67D9FF" font-family="monospace" font-size="12">&gt; Total Alert Pipeline Execution Time: 1.84 seconds</text>
+</svg>

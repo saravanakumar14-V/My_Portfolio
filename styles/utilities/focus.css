@@ -1,0 +1,40 @@
+/* ============================================================
+   FOCUS STYLES
+   Accessible focus rings — keyboard-only visibility.
+   Using :focus-visible for modern browsers.
+   ============================================================ */
+
+/* ── Global focus ring ────────────────────────────────────── */
+/* Visible only on keyboard navigation — not on mouse click */
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Remove outline on mouse click */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Custom focus classes ─────────────────────────────────── */
+/* For interactive components that need custom focus handling */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Inset focus ring — for elements where outline would be cut */
+.focus-ring-inset:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: -2px;
+}
+
+/* Strong focus — for modal triggers and critical controls */
+.focus-ring-strong:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px var(--color-accent-glow);
+  border-radius: var(--radius-md);
+}

@@ -1,0 +1,230 @@
+.editorialGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: start;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .editorialGrid {
+    grid-template-columns: 5.5fr 6.5fr;
+    gap: var(--space-16);
+  }
+}
+
+/* ── Left Column ─────────────────────────────────────────────── */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.metaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(103, 217, 255, 0.12);
+  border: 1px solid rgba(103, 217, 255, 0.3);
+  color: var(--color-accent-primary);
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.sparkleIcon {
+  color: var(--color-accent-primary);
+}
+
+.statement {
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+.accentText {
+  color: var(--color-accent-primary);
+}
+
+.description {
+  line-height: 1.6;
+  max-width: 50ch;
+}
+
+.availabilityCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  border-radius: 14px;
+  background: rgba(5, 8, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.availHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.availDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+}
+
+.availTitle {
+  font-family: var(--font-mono-var);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.availMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+}
+
+.metaIcon {
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+}
+
+.socialBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2-5, 0.6rem);
+  margin-top: var(--space-2);
+}
+
+.socialBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono-var);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.socialBtn:hover {
+  background: rgba(103, 217, 255, 0.1);
+  border-color: var(--color-accent-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(103, 217, 255, 0.2);
+}
+
+/* ── Right Column: Form Container ────────────────────────────── */
+.rightColumn {
+  width: 100%;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  border-radius: 20px;
+  background: rgba(5, 8, 18, 0.85);
+  border: 1px solid rgba(103, 217, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 
+    inset 0 0 20px rgba(103, 217, 255, 0.04),
+    0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.formEyebrow {
+  font-family: var(--font-mono-var);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.formSubtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Light Mode Styles ────────────────────────────────────────── */
+[data-theme="light"] .statement {
+  color: #07111F;
+}
+
+[data-theme="light"] .availabilityCard {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(7, 17, 31, 0.08);
+}
+
+[data-theme="light"] .availTitle {
+  color: #07111F;
+}
+
+[data-theme="light"] .socialBtn {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(7, 17, 31, 0.1);
+  color: #334155;
+}
+
+[data-theme="light"] .socialBtn:hover {
+  background: rgba(2, 132, 199, 0.08);
+  border-color: #0284C7;
+  color: #07111F;
+}
+
+[data-theme="light"] .formContainer {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(2, 132, 199, 0.25);
+  box-shadow: inset 0 0 20px rgba(2, 132, 199, 0.04), 0 20px 40px -15px rgba(7, 17, 31, 0.1);
+}
+
+[data-theme="light"] .formHeader {
+  border-bottom-color: rgba(7, 17, 31, 0.08);
+}
+
+[data-theme="light"] .formTitle {
+  color: #07111F;
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" fill="#040814" />
+  <rect x="50" y="40" width="340" height="40" rx="6" fill="#081024" stroke="rgba(59, 130, 246, 0.3)" />
+  <text x="70" y="65" fill="#3B82F6" font-family="monospace" font-size="12" font-weight="600">NEXMART // SHOPPING CART &amp; CHECKOUT</text>
+  <rect x="50" y="110" width="700" height="430" rx="10" fill="#0A1630" stroke="rgba(255, 255, 255, 0.05)" />
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="600" height="80" rx="8" fill="#060C1B" />
+    <text x="20" y="35" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="600">Wireless Audio Pro (x1)</text>
+    <text x="20" y="60" fill="#88A0C8" font-family="monospace" font-size="10">SKU: AUD-9021 · In Stock</text>
+    <text x="520" y="45" fill="#34D399" font-family="monospace" font-size="14" font-weight="700">$129.00</text>
+
+    <rect x="0" y="95" width="600" height="80" rx="8" fill="#060C1B" />
+    <text x="20" y="130" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="600">Mechanical Key 87 (x1)</text>
+    <text x="20" y="155" fill="#88A0C8" font-family="monospace" font-size="10">SKU: KEY-8700 · In Stock</text>
+    <text x="520" y="140" fill="#34D399" font-family="monospace" font-size="14" font-weight="700">$189.00</text>
+  </g>
+  <rect x="100" y="360" width="600" height="140" rx="8" fill="#030610" />
+  <text x="130" y="400" fill="#88A0C8" font-family="monospace" font-size="12">Order Total: $318.00 (Free Express Delivery Included)</text>
+  <rect x="130" y="425" width="540" height="45" rx="6" fill="#2563EB" />
+  <text x="400" y="453" fill="#FFFFFF" font-family="monospace" font-size="12" font-weight="700" text-anchor="middle">COMPLETE ORDER DISPATCH ↗</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad-sqli" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02040A" />
+      <stop offset="50%" stop-color="#071424" />
+      <stop offset="100%" stop-color="#02040A" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg-grad-sqli)" />
+
+  <!-- App Window Container -->
+  <rect x="120" y="70" width="960" height="535" rx="16" fill="#060C1B" stroke="rgba(103, 217, 255, 0.3)" stroke-width="1.5" />
+
+  <!-- Header -->
+  <rect x="120" y="70" width="960" height="50" rx="16" fill="#09152B" />
+  <circle cx="155" cy="95" r="6" fill="#FF5F56" />
+  <circle cx="175" cy="95" r="6" fill="#FFBD2E" />
+  <circle cx="195" cy="95" r="6" fill="#27C93F" />
+  <text x="600" y="100" fill="#67D9FF" font-family="monospace" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="2">SQL INJECTION PREVENTION &amp; DATA LEAK DEFENSE</text>
+  <rect x="940" y="83" width="115" height="24" rx="4" fill="rgba(103, 217, 255, 0.15)" stroke="rgba(103, 217, 255, 0.3)" />
+  <text x="997" y="99" fill="#67D9FF" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle">COMPLETED</text>
+
+  <!-- Left: Threat Detection & Defense Architecture -->
+  <rect x="150" y="145" width="410" height="430" rx="10" fill="#0A1630" stroke="rgba(255, 255, 255, 0.05)" />
+  <text x="175" y="180" fill="#88A0C8" font-family="monospace" font-size="11" font-weight="600" letter-spacing="1">DEFENSIVE SECURITY MODULES</text>
+
+  <!-- Module 1: Parameterized Queries -->
+  <g transform="translate(175, 205)">
+    <rect x="0" y="0" width="360" height="70" rx="8" fill="#081124" stroke="rgba(52, 211, 153, 0.3)" />
+    <text x="20" y="28" fill="#34D399" font-family="monospace" font-size="11" font-weight="700">✓ Parameterized Query Engine</text>
+    <text x="20" y="50" fill="#A0B4D8" font-family="monospace" font-size="10">cursor.execute(&quot;SELECT * FROM users WHERE id=?&quot;, (id,))</text>
+  </g>
+
+  <!-- Module 2: Field Encryption -->
+  <g transform="translate(175, 290)">
+    <rect x="0" y="0" width="360" height="70" rx="8" fill="#081124" stroke="rgba(103, 217, 255, 0.3)" />
+    <text x="20" y="28" fill="#67D9FF" font-family="monospace" font-size="11" font-weight="700">✓ Cryptographic Payload Encryption</text>
+    <text x="20" y="50" fill="#A0B4D8" font-family="monospace" font-size="10">AES-256 GCM encryption for stored user records</text>
+  </g>
+
+  <!-- Module 3: Role-Based Access Control -->
+  <g transform="translate(175, 375)">
+    <rect x="0" y="0" width="360" height="70" rx="8" fill="#081124" stroke="rgba(103, 217, 255, 0.3)" />
+    <text x="20" y="28" fill="#67D9FF" font-family="monospace" font-size="11" font-weight="700">✓ Authorization Middleware</text>
+    <text x="20" y="50" fill="#A0B4D8" font-family="monospace" font-size="10">Capability-based access validation on all API endpoints</text>
+  </g>
+
+  <!-- Security Audit Status -->
+  <rect x="175" y="465" width="360" height="85" rx="8" fill="rgba(52, 211, 153, 0.08)" stroke="rgba(52, 211, 153, 0.25)" />
+  <text x="195" y="495" fill="#34D399" font-family="monospace" font-size="11" font-weight="700">ATTACK VECTOR AUDIT</text>
+  <text x="195" y="520" fill="#A0B4D8" font-family="monospace" font-size="10">Tautology, Union-Based &amp; Blind SQLi: 100% BLOCKED</text>
+
+  <!-- Right: Real-time Threat Mitigation Logs -->
+  <rect x="585" y="145" width="465" height="430" rx="10" fill="#050C1B" stroke="rgba(255, 255, 255, 0.05)" />
+  <text x="610" y="180" fill="#88A0C8" font-family="monospace" font-size="11" font-weight="600" letter-spacing="1">LIVE QUERY VALIDATION AUDIT</text>
+
+  <!-- Simulated Injection Payload Interception -->
+  <g transform="translate(610, 205)">
+    <rect x="0" y="0" width="415" height="85" rx="8" fill="rgba(239, 68, 68, 0.12)" stroke="#EF4444" />
+    <text x="20" y="28" fill="#F87171" font-family="monospace" font-size="10" font-weight="700">INTERCEPTED INJECTION PAYLOAD</text>
+    <text x="20" y="50" fill="#FFFFFF" font-family="monospace" font-size="10">INPUT: &apos; OR &apos;1&apos;=&apos;1&apos; -- DROP TABLE users;</text>
+    <text x="20" y="70" fill="#F87171" font-family="monospace" font-size="9">ACTION: NEUTRALIZED VIA PARAMETER BINDING</text>
+  </g>
+
+  <!-- Sanitized Query Log Stream -->
+  <rect x="610" y="310" width="415" height="240" rx="8" fill="#030610" stroke="rgba(255, 255, 255, 0.06)" />
+  <text x="630" y="340" fill="#67D9FF" font-family="monospace" font-size="11">&gt; Flask Security Guard: Inbound POST /api/v1/auth/login</text>
+  <text x="630" y="370" fill="#A0B4D8" font-family="monospace" font-size="10">&gt; Pattern Validator: Raw SQL special tokens isolated.</text>
+  <text x="630" y="400" fill="#34D399" font-family="monospace" font-size="10">&gt; Strict parameterized query safely executed in SQLite.</text>
+  <text x="630" y="430" fill="#A0B4D8" font-family="monospace" font-size="10">&gt; Zero data leak detected. Response code 401 Unauthorized.</text>
+  <text x="630" y="460" fill="#34D399" font-family="monospace" font-size="10">&gt; Cryptographic tamper verification: OK</text>
+</svg>

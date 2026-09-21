@@ -1,0 +1,576 @@
+.header {
+  margin-bottom: var(--space-8);
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.eyebrow {
+  color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
+.eyebrowDivider {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.eyebrowMeta {
+  color: var(--color-text-tertiary);
+}
+
+.title {
+  margin-bottom: var(--space-1);
+}
+
+.description {
+  max-width: 620px;
+}
+
+/* ── 01 Flagship Container (Split Layout) ─────────────────────── */
+.flagshipContainer {
+  margin-bottom: var(--space-6);
+  width: 100%;
+}
+
+.flagshipCard {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  background-color: rgba(6, 10, 22, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: inset 0 0 24px rgba(103, 217, 255, 0.08), 0 20px 48px -12px rgba(0, 0, 0, 0.8);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.flagshipCard:hover {
+  box-shadow: inset 0 0 32px rgba(103, 217, 255, 0.16), 0 28px 56px -14px rgba(0, 0, 0, 0.9);
+}
+
+.cardClickableArea {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.flagshipInner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 960px) {
+  .flagshipInner {
+    grid-template-columns: 5fr 6fr;
+    gap: 2rem;
+    padding: 2rem 2.25rem;
+    align-items: center;
+  }
+}
+
+.flagshipContentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.flagshipIdentity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.flagshipTitle {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.flagshipTagline {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 48ch;
+}
+
+.flagshipActionRow {
+  margin-top: 0.25rem;
+}
+
+.flagshipBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.35rem;
+  border-radius: 999px;
+  background: rgba(103, 217, 255, 0.15);
+  border: 1px solid var(--color-accent-primary);
+  color: #fff;
+  font-family: var(--font-mono-var);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 16px rgba(103, 217, 255, 0.25);
+}
+
+.flagshipBtn:hover {
+  background: var(--color-accent-primary);
+  color: #02040A;
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(103, 217, 255, 0.5);
+}
+
+.flagshipVisualCol {
+  width: 100%;
+}
+
+.flagshipVisualFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(103, 217, 255, 0.25);
+  background: #000;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(103, 217, 255, 0.1);
+}
+
+.flagshipImage {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flagshipCard:hover .flagshipImage {
+  transform: scale(1.03);
+}
+
+.visualStatusBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(4, 8, 20, 0.85);
+  border: 1px solid rgba(103, 217, 255, 0.4);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-mono-var);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-primary);
+  z-index: 2;
+}
+
+/* ── 02 Balanced Secondary Projects Grid (3 Columns) ─────────── */
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .showcaseGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .showcaseGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gridCell {
+  display: flex;
+  height: 100%;
+}
+
+.projectBlock {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  background-color: rgba(6, 10, 22, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 10px 24px -6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.projectBlock:hover {
+  background-color: rgba(8, 14, 28, 0.95);
+  box-shadow: inset 0 0 0 1px rgba(103, 217, 255, 0.28), 0 16px 36px -8px rgba(0, 0, 0, 0.7);
+}
+
+.cardInner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 1.15rem;
+  gap: 0.85rem;
+  height: 100%;
+}
+
+/* ── Metadata Row ────────────────────────────────────────────── */
+.topMetaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.75rem;
+}
+
+.statusOngoing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.65rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: rgba(103, 217, 255, 0.12);
+  color: var(--color-accent-primary);
+  border: 1px solid rgba(103, 217, 255, 0.35);
+}
+
+.statusCompletedBadge {
+  font-family: var(--font-mono-var);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.pulsingDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent-primary);
+  box-shadow: 0 0 6px var(--color-accent-primary);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+.flagshipPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(103, 217, 255, 0.25), rgba(59, 167, 255, 0.15));
+  color: #fff;
+  border: 1px solid rgba(103, 217, 255, 0.45);
+}
+
+/* ── Compact Visual Frame ────────────────────────────────────── */
+.visualFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.projectImage {
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s ease;
+}
+
+.projectBlock:hover .projectImage {
+  transform: scale(1.04);
+}
+
+.visualOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6, 10, 22, 0.55) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.categoryFloatingBadge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(3, 7, 18, 0.82);
+  border: 1px solid rgba(103, 217, 255, 0.35);
+  font-family: var(--font-mono-var);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-primary);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+/* ── Card Body & Details ─────────────────────────────────────── */
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.cardHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.projectTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.projectTagline {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* ── Technology Row ──────────────────────────────────────────── */
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: auto;
+}
+
+.techPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
+}
+
+.techMorePill {
+  font-family: var(--font-mono-var);
+  font-size: 0.65rem;
+  color: var(--color-text-tertiary);
+  padding: 0.15rem 0.4rem;
+}
+
+.projectBlock:hover .techPill,
+.flagshipCard:hover .techPill {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(103, 217, 255, 0.25);
+  color: var(--color-text-primary);
+}
+
+/* ── Action Row ──────────────────────────────────────────────── */
+.actionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 0.35rem;
+}
+
+.caseStudyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.caseStudyLink:hover {
+  color: #fff;
+  transform: translateX(2px);
+}
+
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.githubLink:hover {
+  color: #fff;
+  border-color: rgba(103, 217, 255, 0.3);
+  background: rgba(103, 217, 255, 0.08);
+}
+
+.linkArrow {
+  transition: transform 0.2s ease;
+}
+
+.caseStudyLink:hover .linkArrow,
+.flagshipBtn:hover .linkArrow {
+  transform: translate(2px, -2px);
+}
+
+/* ── 03 Catalog Bridge Button ────────────────────────────────── */
+.catalogBridge {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+.catalogBridgeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(103, 217, 255, 0.3);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono-var);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.catalogBridgeBtn:hover {
+  background: rgba(103, 217, 255, 0.15);
+  border-color: var(--color-accent-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(103, 217, 255, 0.25);
+}
+
+/* ── Light Mode Styles ────────────────────────────────────────── */
+[data-theme="light"] .flagshipCard {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 0 0 1px rgba(2, 132, 199, 0.2), 0 20px 48px -12px rgba(7, 17, 31, 0.12);
+}
+
+[data-theme="light"] .projectBlock {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(7, 17, 31, 0.08), 0 12px 24px -6px rgba(7, 17, 31, 0.06);
+}
+
+[data-theme="light"] .projectBlock:hover {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: inset 0 0 0 1px rgba(2, 132, 199, 0.25), 0 20px 40px -10px rgba(7, 17, 31, 0.12);
+}
+
+[data-theme="light"] .projectTitle {
+  color: #07111F;
+}
+
+[data-theme="light"] .techPill {
+  background: rgba(7, 17, 31, 0.04);
+  border-color: rgba(7, 17, 31, 0.12);
+  color: #475569;
+}
+
+[data-theme="light"] .statusCompleted {
+  background: rgba(7, 17, 31, 0.04);
+  border-color: rgba(7, 17, 31, 0.12);
+  color: #475569;
+}
+
+[data-theme="light"] .githubBtn {
+  background: rgba(7, 17, 31, 0.04);
+  border-color: rgba(7, 17, 31, 0.14);
+  color: #334155;
+}
+
+[data-theme="light"] .visualFrame,
+[data-theme="light"] .flagshipVisualFrame {
+  border-color: rgba(7, 17, 31, 0.1);
+  background-color: rgba(7, 17, 31, 0.03);
+}
+
+[data-theme="light"] .visualOverlay {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.6) 0%, transparent 40%);
+}
+
+[data-theme="light"] .catalogBridgeBtn {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(2, 132, 199, 0.3);
+  color: #07111F;
+}
+
+[data-theme="light"] .catalogBridgeBtn:hover {
+  background: rgba(2, 132, 199, 0.08);
+  border-color: #0284C7;
+  color: #0284C7;
+}

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad-diab" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02040A" />
+      <stop offset="50%" stop-color="#061224" />
+      <stop offset="100%" stop-color="#02040A" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg-grad-diab)" />
+
+  <!-- App Window Container -->
+  <rect x="120" y="70" width="960" height="535" rx="16" fill="#060C1B" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5" />
+
+  <!-- Header -->
+  <rect x="120" y="70" width="960" height="50" rx="16" fill="#09142E" />
+  <circle cx="155" cy="95" r="6" fill="#FF5F56" />
+  <circle cx="175" cy="95" r="6" fill="#FFBD2E" />
+  <circle cx="195" cy="95" r="6" fill="#27C93F" />
+  <text x="600" y="100" fill="#38BDF8" font-family="monospace" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="2">DIABETES PREDICTION &amp; CLINICAL DIAGNOSTIC PIPELINE</text>
+  <rect x="940" y="83" width="115" height="24" rx="4" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.3)" />
+  <text x="997" y="99" fill="#38BDF8" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle">COMPLETED</text>
+
+  <!-- Left: Clinical Input Form -->
+  <rect x="150" y="145" width="410" height="430" rx="10" fill="#0A1630" stroke="rgba(255, 255, 255, 0.05)" />
+  <text x="175" y="180" fill="#88A0C8" font-family="monospace" font-size="11" font-weight="600" letter-spacing="1">PATIENT CLINICAL PARAMETERS</text>
+
+  <!-- Input Fields Grid -->
+  <g transform="translate(175, 205)">
+    <rect x="0" y="0" width="170" height="60" rx="6" fill="#060C1B" stroke="rgba(255, 255, 255, 0.08)" />
+    <text x="15" y="24" fill="#88A0C8" font-family="monospace" font-size="9">GLUCOSE (mg/dL)</text>
+    <text x="15" y="48" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="700">148</text>
+
+    <rect x="190" y="0" width="170" height="60" rx="6" fill="#060C1B" stroke="rgba(255, 255, 255, 0.08)" />
+    <text x="205" y="24" fill="#88A0C8" font-family="monospace" font-size="9">INSULIN (mu U/ml)</text>
+    <text x="205" y="48" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="700">79</text>
+
+    <rect x="0" y="75" width="170" height="60" rx="6" fill="#060C1B" stroke="rgba(255, 255, 255, 0.08)" />
+    <text x="15" y="99" fill="#88A0C8" font-family="monospace" font-size="9">BMI (kg/m²)</text>
+    <text x="15" y="123" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="700">33.6</text>
+
+    <rect x="190" y="75" width="170" height="60" rx="6" fill="#060C1B" stroke="rgba(255, 255, 255, 0.08)" />
+    <text x="205" y="99" fill="#88A0C8" font-family="monospace" font-size="9">BLOOD PRESSURE</text>
+    <text x="205" y="123" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="700">72</text>
+
+    <rect x="0" y="150" width="170" height="60" rx="6" fill="#060C1B" stroke="rgba(255, 255, 255, 0.08)" />
+    <text x="15" y="174" fill="#88A0C8" font-family="monospace" font-size="9">AGE (YEARS)</text>
+    <text x="15" y="198" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="700">50</text>
+
+    <rect x="190" y="150" width="170" height="60" rx="6" fill="#060C1B" stroke="rgba(255, 255, 255, 0.08)" />
+    <text x="205" y="174" fill="#88A0C8" font-family="monospace" font-size="9">PEDIGREE FUNCTION</text>
+    <text x="205" y="198" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="700">0.627</text>
+  </g>
+
+  <!-- Submit / Prediction Button -->
+  <rect x="175" y="480" width="360" height="45" rx="8" fill="rgba(56, 189, 248, 0.15)" stroke="#38BDF8" stroke-width="1.5" />
+  <text x="355" y="508" fill="#38BDF8" font-family="monospace" font-size="12" font-weight="700" text-anchor="middle">EXECUTE MODEL INFERENCE ↗</text>
+
+  <!-- Right: ML Prediction Gauge & Results -->
+  <rect x="585" y="145" width="465" height="430" rx="10" fill="#071124" stroke="rgba(255, 255, 255, 0.05)" />
+  <text x="610" y="180" fill="#88A0C8" font-family="monospace" font-size="11" font-weight="600" letter-spacing="1">PREDICTIVE RISK PROBABILITY</text>
+
+  <!-- Risk Probability Dial -->
+  <g transform="translate(817, 280)">
+    <circle cx="0" cy="0" r="75" stroke="rgba(255, 255, 255, 0.08)" stroke-width="12" fill="none" />
+    <circle cx="0" cy="0" r="75" stroke="#38BDF8" stroke-width="12" stroke-dasharray="290 470" stroke-linecap="round" fill="none" transform="rotate(-90)" />
+    <text x="0" y="8" fill="#FFFFFF" font-family="sans-serif" font-size="32" font-weight="700" text-anchor="middle">72.4%</text>
+    <text x="0" y="30" fill="#38BDF8" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle">ELEVATED RISK</text>
+  </g>
+
+  <!-- ML Model Confidence Distribution -->
+  <rect x="610" y="390" width="415" height="155" rx="8" fill="#040813" stroke="rgba(255, 255, 255, 0.06)" />
+  <text x="630" y="420" fill="#38BDF8" font-family="monospace" font-size="11">&gt; Classifier: Trained scikit-learn Ensemble Pipeline</text>
+  <text x="630" y="448" fill="#A0B4D8" font-family="monospace" font-size="10">&gt; Primary Factor: Elevated fasting glucose and BMI correlation</text>
+  <text x="630" y="476" fill="#34D399" font-family="monospace" font-size="10">&gt; Model Precision: 87.2% on medical validation holdout split</text>
+  <text x="630" y="504" fill="#88A0C8" font-family="monospace" font-size="10">&gt; Output generated in 18ms via Flask REST API</text>
+</svg>

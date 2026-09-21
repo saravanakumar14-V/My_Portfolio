@@ -1,0 +1,78 @@
+/* ============================================================
+   GLOBAL CSS — Portfolio
+   Import order matters:
+   1. Google Fonts CDN (client runtime)
+   2. Design tokens (CSS custom properties)
+   3. Base reset & fonts
+   4. Global element styles
+   5. Accessibility utilities
+   ============================================================ */
+
+/* ── Google Fonts (Loaded at runtime, zero build-time network failure) ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ── Design Tokens ─────────────────────────────────────────── */
+@import '../styles/tokens/colors.css';
+@import '../styles/tokens/typography.css';
+@import '../styles/tokens/spacing.css';
+@import '../styles/tokens/elevation.css';
+@import '../styles/tokens/motion.css';
+
+/* ── Base ─────────────────────────────────────────────────── */
+@import '../styles/base/reset.css';
+@import '../styles/base/global.css';
+
+/* ── Utilities ────────────────────────────────────────────── */
+@import '../styles/utilities/visually-hidden.css';
+@import '../styles/utilities/focus.css';
+
+/* ── Noise Texture ────────────────────────────────────────── */
+/* Subtle film-grain overlay — 2-4% opacity. Fixed position (doesn't scroll). */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-top);
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4t5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92ZBKLsbkdkLJ1kE5MckoZhnFkbO4pM3vb9i2TUKvC2EAAAAAASUVORK5CYII=");
+  opacity: 0.03;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    display: none;
+  }
+}
+
+/* ── Page Layout ──────────────────────────────────────────── */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Lenis Smooth Scroll Styles ──────────────────────────── */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

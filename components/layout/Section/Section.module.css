@@ -1,0 +1,32 @@
+/* Section Component Styles */
+
+.section {
+  position: relative;
+  width: 100%;
+}
+
+/* ── Spacing ────────────────────────────────────────────────── */
+.spacing-none {
+  padding-block: 0;
+}
+
+.spacing-sm {
+  padding-block: var(--section-gap-sm);
+}
+
+.spacing-default {
+  padding-block: var(--section-gap);
+}
+
+.spacing-lg {
+  padding-block: var(--section-gap-lg);
+}
+
+/* ── Backgrounds ────────────────────────────────────────────── */
+.bg-primary {
+  background-color: transparent;
+}
+
+.bg-secondary {
+  background-color: rgba(5, 8, 18, 0.4);
+}

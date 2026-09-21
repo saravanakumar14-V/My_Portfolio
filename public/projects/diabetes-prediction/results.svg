@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" fill="#040814" />
+  <rect x="50" y="40" width="340" height="40" rx="6" fill="#081024" stroke="rgba(56, 189, 248, 0.3)" />
+  <text x="70" y="65" fill="#38BDF8" font-family="monospace" font-size="12" font-weight="600">DIABETES PREDICTION // MODEL METRICS</text>
+  <rect x="50" y="110" width="700" height="430" rx="10" fill="#071124" stroke="rgba(255, 255, 255, 0.05)" />
+  <text x="80" y="160" fill="#34D399" font-family="monospace" font-size="12">&gt; Classification Model: scikit-learn Ensemble Pipeline</text>
+  <text x="80" y="200" fill="#A0B4D8" font-family="monospace" font-size="11">&gt; Training Validation Accuracy: 87.2%</text>
+  <text x="80" y="235" fill="#A0B4D8" font-family="monospace" font-size="11">&gt; Precision: 84.5% · Recall / Sensitivity: 89.1%</text>
+  <text x="80" y="270" fill="#A0B4D8" font-family="monospace" font-size="11">&gt; F1-Score: 86.7% on clinical test partition</text>
+  <rect x="80" y="310" width="640" height="180" rx="8" fill="#040813" />
+  <text x="100" y="350" fill="#38BDF8" font-family="monospace" font-size="11">CLINICAL FEATURE IMPORTANCE WEIGHTS:</text>
+  <text x="100" y="380" fill="#A0B4D8" font-family="monospace" font-size="10">1. Fasting Blood Glucose Level (38.4%)</text>
+  <text x="100" y="405" fill="#A0B4D8" font-family="monospace" font-size="10">2. Body Mass Index (BMI) (24.1%)</text>
+  <text x="100" y="430" fill="#A0B4D8" font-family="monospace" font-size="10">3. Patient Age &amp; Pedigree Function (19.7%)</text>
+</svg>

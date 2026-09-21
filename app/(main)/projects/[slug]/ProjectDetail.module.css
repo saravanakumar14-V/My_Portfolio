@@ -1,0 +1,108 @@
+/* ProjectDetail Component Styles */
+
+.heroSection {
+  padding-top: var(--space-32); /* Extra padding for nav */
+  padding-bottom: var(--space-16);
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 800px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+.title {
+  /* Title styles inherited from Heading component */
+}
+
+.tagline {
+  max-width: 55ch;
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Main Image ──────────────────────────────────────────────── */
+.imageSection {
+  margin-top: calc(var(--space-8) * -1); /* Pull image up slightly into hero */
+  z-index: 10;
+  position: relative;
+}
+
+.mainImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--color-bg-elevated);
+}
+
+.mainImage {
+  object-fit: cover;
+}
+
+/* ── Details Grid ────────────────────────────────────────────── */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+@media (min-width: 640px) {
+  .detailsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .detailsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blockTitle {
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.liveLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-accent-primary);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out-cubic);
+}
+
+.liveLink:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ── Content ────────────────────────────────────────────────── */
+.content {
+  /* Prose content styles */
+}

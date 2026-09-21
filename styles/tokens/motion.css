@@ -1,0 +1,87 @@
+/* ============================================================
+   MOTION TOKENS
+   Design System — Portfolio
+   Rule: Every animation maps to one of three duration tiers:
+         Micro (0–200ms), Standard (200–500ms), Cinematic (500–1200ms)
+         Never exceed 1200ms. Never use linear easing on UI.
+   ============================================================ */
+
+:root {
+  /* ── Duration Tokens ────────────────────────────────────── */
+  /* Micro tier */
+  --duration-instant:  0ms;      /* Immediate — no animation */
+  --duration-fast:     150ms;    /* Color, opacity, focus rings */
+
+  /* Standard tier */
+  --duration-normal:   300ms;    /* Hover, focus, nav underlines, menu open/close */
+  --duration-slow:     500ms;    /* Reveals, expansions, card stagger */
+
+  /* Cinematic tier */
+  --duration-slower:   800ms;    /* Page transitions, hero entrance */
+  --duration-slowest:  1200ms;   /* Initial load choreography — absolute max */
+
+  /* ── Easing Tokens ──────────────────────────────────────── */
+  /* Assigned by intent — not per-animation aesthetics */
+
+  /* Entrance — fast start, graceful stop */
+  --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart:  cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Exit — slow start, fast exit */
+  --ease-in-expo:    cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-quart:   cubic-bezier(0.5, 0, 0.75, 0);
+
+  /* Interaction — hover, focus (quick response, soft landing) */
+  --ease-out-cubic:  cubic-bezier(0.33, 1, 0.68, 1);
+
+  /* Tactile — button press, toggle (slight overshoot) */
+  --ease-out-back:   cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Continuous tracking — cursor, magnetic pull */
+  --ease-spring:     cubic-bezier(0.22, 1.2, 0.36, 1);
+
+  /* Symmetric — page transitions, crossfades */
+  --ease-in-out:     cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ── Stagger Tokens ─────────────────────────────────────── */
+  /* Between staggered siblings. Max 6 children per group. */
+  --stagger-fast:    40ms;     /* Nav links, tags */
+  --stagger-normal:  80ms;     /* Cards, list items */
+  --stagger-slow:    120ms;    /* Hero text lines, section reveals */
+
+  /* ── Scroll Animation ───────────────────────────────────── */
+  --scroll-scrub:    1;        /* GSAP scrub smoothing (seconds) */
+
+  /* ── Transition Shorthand ───────────────────────────────── */
+  /* Pre-built transition values for common use cases */
+  --transition-fast:    var(--duration-fast) var(--ease-out-cubic);
+  --transition-normal:  var(--duration-normal) var(--ease-out-cubic);
+  --transition-slow:    var(--duration-slow) var(--ease-out-expo);
+  --transition-colors:  color var(--transition-fast),
+                        background-color var(--transition-fast),
+                        border-color var(--transition-fast),
+                        opacity var(--transition-fast);
+  --transition-transform: transform var(--transition-normal);
+  --transition-shadow:    box-shadow var(--transition-normal);
+}
+
+/* ── Reduced Motion Override ────────────────────────────── */
+/* When user prefers reduced motion, collapse all durations to 0 */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast:     0ms;
+    --duration-normal:   0ms;
+    --duration-slow:     0ms;
+    --duration-slower:   0ms;
+    --duration-slowest:  0ms;
+    --stagger-fast:      0ms;
+    --stagger-normal:    0ms;
+    --stagger-slow:      0ms;
+    --transition-fast:   0ms;
+    --transition-normal: 0ms;
+    --transition-slow:   0ms;
+    --transition-colors: none;
+    --transition-transform: none;
+    --transition-shadow: none;
+  }
+}

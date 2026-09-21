@@ -1,0 +1,124 @@
+.workflowSection {
+  position: relative;
+}
+
+.header {
+  margin-bottom: var(--space-8);
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: var(--space-2);
+}
+
+.eyebrowIcon {
+  color: var(--color-accent-primary);
+}
+
+.metaLabel {
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-bottom: var(--space-1);
+}
+
+.description {
+  max-width: 620px;
+}
+
+/* ── Workflow Steps ──────────────────────────────────────────── */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .stepsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border-radius: 12px;
+  background: rgba(5, 8, 18, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.stepCard:hover {
+  background: rgba(8, 12, 24, 0.85);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+}
+
+.stepTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-1);
+}
+
+.stepNumber {
+  font-family: var(--font-mono-var);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  letter-spacing: 0.05em;
+}
+
+.stepArrow {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.stepDesc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+/* ── Light Mode ──────────────────────────────────────────────── */
+[data-theme="light"] .metaLabel {
+  color: #0284c7;
+}
+
+[data-theme="light"] .stepCard {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(7, 17, 31, 0.08);
+}
+
+[data-theme="light"] .stepCard:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(2, 132, 199, 0.35);
+}
+
+[data-theme="light"] .stepTitle {
+  color: #07111f;
+}
+
+[data-theme="light"] .stepDesc {
+  color: #475569;
+}

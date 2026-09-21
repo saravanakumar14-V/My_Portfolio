@@ -1,0 +1,85 @@
+/* AmbientGlow Component Styles */
+
+.glow {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: 0;
+  opacity: var(--dir-ambient-intensity, 0.15);
+  mix-blend-mode: screen;
+  animation: breathe 10s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+  transition: opacity 1s ease;
+}
+
+/* ── Positions ───────────────────────────────────────────────── */
+.top-left {
+  top: -20%;
+  left: -20%;
+}
+.top-right {
+  top: -20%;
+  right: -20%;
+}
+.bottom-left {
+  bottom: -20%;
+  left: -20%;
+}
+.bottom-right {
+  bottom: -20%;
+  right: -20%;
+}
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Variants ────────────────────────────────────────────────── */
+.primary {
+  background: radial-gradient(circle, var(--dir-ambient-color, var(--color-accent-primary)) 0%, transparent 70%);
+  transition: background 1s ease;
+}
+.secondary {
+  background: radial-gradient(circle, var(--color-text-secondary) 0%, transparent 70%);
+}
+.accent {
+  background: radial-gradient(circle, rgba(100, 200, 255, 0.5) 0%, transparent 70%);
+}
+
+/* ── Animation ───────────────────────────────────────────────── */
+@keyframes breathe {
+  0% {
+    transform: scale(0.9) translate(0, 0);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1.1) translate(2%, 2%);
+    opacity: 0.2;
+  }
+}
+
+/* Base transform handling for centered variation in animation */
+.center.glow {
+  animation: breatheCenter 15s ease-in-out infinite alternate;
+}
+
+@keyframes breatheCenter {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.2;
+  }
+}
+
+.static {
+  animation: none !important;
+}

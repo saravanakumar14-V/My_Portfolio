@@ -1,0 +1,97 @@
+/* ============================================================
+   COLOR TOKENS & THEME SYSTEM
+   Design System — Portfolio
+   Rule: Always reference these semantic tokens.
+   Default: Dark Theme (Cinematic Deep Space)
+   Alternative: Light Theme (Editorial Engineering Interface)
+   ============================================================ */
+
+:root,
+[data-theme="dark"] {
+  /* ── Background Layers ──────────────────────────────────── */
+  --color-bg-primary:      #02040A;       /* Deep space background */
+  --color-bg-secondary:    #050812;       /* Elevated sections, nav */
+  --color-bg-tertiary:     #080D18;       /* Cards, panels, inputs */
+  --color-bg-elevated:     #0A1630;       /* Hover states, dropdowns */
+  --color-bg-card:         rgba(5, 8, 18, 0.85);
+  --color-bg-card-hover:   rgba(5, 8, 18, 0.95);
+
+  /* ── Text Layers ────────────────────────────────────────── */
+  --color-text-primary:    #F4F7FF;       /* Primary content */
+  --color-text-secondary:  #8D9BB3;       /* Supporting content */
+  --color-text-tertiary:   #546582;       /* Muted metadata */
+  --color-text-disabled:   #344158;       /* Disabled state */
+  --color-text-inverse:    #02040A;       /* Text on accent */
+
+  /* ── Accent — Cinematic Blue & Cyan ─────────────────────── */
+  --color-accent-primary:  #3BA7FF;       /* Electric blue accent */
+  --color-accent-hover:    #67D9FF;       /* Cyan highlight */
+  --color-accent-muted:    #0A2852;       /* Subtle accent background */
+  --color-accent-glow:     rgba(59, 167, 255, 0.2); /* Glow effect */
+
+  /* ── Borders ────────────────────────────────────────────── */
+  --color-border-default:  rgba(255, 255, 255, 0.08); /* Default border */
+  --color-border-hover:    rgba(103, 217, 255, 0.35); /* Border on hover */
+  --color-border-accent:   rgba(59, 167, 255, 0.35);  /* Accent border */
+  --color-border-subtle:   rgba(255, 255, 255, 0.05); /* Subtle dividers */
+
+  /* ── Semantic Status Colors ─────────────────────────────── */
+  --color-success:         #40b377;
+  --color-success-muted:   rgba(64, 179, 119, 0.12);
+  --color-error:           #e05252;
+  --color-error-muted:     rgba(224, 82, 82, 0.12);
+  --color-warning:         #e8a74e;
+  --color-info:            #1677FF;
+
+  /* ── Overlays & Glass Surfaces ──────────────────────────── */
+  --color-overlay-dark:    rgba(2, 4, 10, 0.85);
+  --color-overlay-subtle:  rgba(2, 4, 10, 0.4);
+  --color-glass-bg:        rgba(5, 8, 18, 0.7);
+  --color-glass-bg-strong: rgba(5, 8, 18, 0.92);
+  --color-shadow-card:     rgba(0, 0, 0, 0.6);
+}
+
+/* ── Light Mode — Editorial Technology Interface ─────────── */
+[data-theme="light"] {
+  /* ── Background Layers ──────────────────────────────────── */
+  --color-bg-primary:      #F6F9FC;       /* Near-white / cool white */
+  --color-bg-secondary:    #EEF3F8;       /* Soft light blue-gray */
+  --color-bg-tertiary:     #FFFFFF;       /* Pure white surface */
+  --color-bg-elevated:     #E2E8F0;       /* Light elevated elements */
+  --color-bg-card:         rgba(255, 255, 255, 0.88);
+  --color-bg-card-hover:   rgba(255, 255, 255, 0.98);
+
+  /* ── Text Layers ────────────────────────────────────────── */
+  --color-text-primary:    #07111F;       /* Deep navy primary text */
+  --color-text-secondary:  #475569;       /* Muted blue-gray text */
+  --color-text-tertiary:   #64748B;       /* Secondary metadata */
+  --color-text-disabled:   #94A3B8;       /* Disabled */
+  --color-text-inverse:    #F8FAFC;       /* White text on accent */
+
+  /* ── Accent — Refined Electric Blue ─────────────────────── */
+  --color-accent-primary:  #0284C7;       /* Refined ocean/sky blue */
+  --color-accent-hover:    #0369A1;       /* Deepened hover blue */
+  --color-accent-muted:    #E0F2FE;       /* Light blue tint */
+  --color-accent-glow:     rgba(2, 132, 199, 0.15);
+
+  /* ── Borders ────────────────────────────────────────────── */
+  --color-border-default:  rgba(7, 17, 31, 0.12);
+  --color-border-hover:    rgba(2, 132, 199, 0.4);
+  --color-border-accent:   rgba(2, 132, 199, 0.35);
+  --color-border-subtle:   rgba(7, 17, 31, 0.07);
+
+  /* ── Semantic Status Colors ─────────────────────────────── */
+  --color-success:         #059669;
+  --color-success-muted:   rgba(5, 150, 105, 0.12);
+  --color-error:           #DC2626;
+  --color-error-muted:     rgba(220, 38, 38, 0.12);
+  --color-warning:         #D97706;
+  --color-info:            #0284C7;
+
+  /* ── Overlays & Glass Surfaces ──────────────────────────── */
+  --color-overlay-dark:    rgba(246, 249, 252, 0.85);
+  --color-overlay-subtle:  rgba(246, 249, 252, 0.4);
+  --color-glass-bg:        rgba(255, 255, 255, 0.78);
+  --color-glass-bg-strong: rgba(255, 255, 255, 0.94);
+  --color-shadow-card:     rgba(7, 17, 31, 0.08);
+}

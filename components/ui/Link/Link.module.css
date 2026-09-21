@@ -1,0 +1,63 @@
+/* Link Component Styles */
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--duration-fast) var(--ease-out-cubic);
+}
+
+.withIcon {
+  gap: var(--space-1);
+}
+
+.externalIcon {
+  width: 1em;
+  height: 1em;
+  transition: transform var(--duration-fast) var(--ease-out-cubic);
+}
+
+.link:hover .externalIcon {
+  transform: translate(2px, -2px);
+}
+
+/* ── Variants ───────────────────────────────────────────────── */
+.inline {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+}
+
+.inline:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.primary {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+}
+
+.primary:hover {
+  color: var(--color-accent-primary);
+}
+
+.secondary {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.secondary:hover {
+  color: var(--color-text-primary);
+}
+
+.nav {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.nav:hover {
+  color: var(--color-text-primary);
+}

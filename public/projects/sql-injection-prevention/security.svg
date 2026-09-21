@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" fill="#040814" />
+  <rect x="50" y="40" width="340" height="40" rx="6" fill="#081024" stroke="rgba(103, 217, 255, 0.3)" />
+  <text x="70" y="65" fill="#67D9FF" font-family="monospace" font-size="12" font-weight="600">SQLi DEFENSE // PARAMETER VALIDATION</text>
+  <rect x="50" y="110" width="700" height="430" rx="10" fill="#050C1B" stroke="rgba(255, 255, 255, 0.05)" />
+  <g transform="translate(80, 150)">
+    <rect x="0" y="0" width="640" height="100" rx="8" fill="rgba(239, 68, 68, 0.1)" stroke="#EF4444" />
+    <text x="20" y="35" fill="#F87171" font-family="monospace" font-size="12" font-weight="700">INBOUND MALICIOUS SQL PAYLOAD INTERCEPTED:</text>
+    <text x="20" y="65" fill="#FFFFFF" font-family="monospace" font-size="11">admin&apos; UNION SELECT 1, username, password FROM users --</text>
+  </g>
+  <g transform="translate(80, 280)">
+    <rect x="0" y="0" width="640" height="100" rx="8" fill="rgba(52, 211, 153, 0.1)" stroke="#34D399" />
+    <text x="20" y="35" fill="#34D399" font-family="monospace" font-size="12" font-weight="700">SANITIZED SAFE EXECUTION:</text>
+    <text x="20" y="65" fill="#FFFFFF" font-family="monospace" font-size="11">SELECT * FROM users WHERE username = ? (Param: &quot;admin&apos;...&quot; treated as literal)</text>
+  </g>
+</svg>

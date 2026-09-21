@@ -1,0 +1,114 @@
+.featureSection {
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+}
+
+.container {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+}
+
+.layout {
+  display: flex;
+  gap: var(--space-16);
+  position: relative;
+}
+
+.visualColumn {
+  flex: 1;
+  position: relative;
+  /* GSAP handles pinning */
+  height: 80vh; 
+  display: flex;
+  align-items: center;
+}
+
+.visualPlaceholder {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-bg-secondary);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+.placeholderBox {
+  position: absolute;
+  inset: var(--space-4);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  filter: grayscale(0.5);
+  transition: filter 0.3s ease;
+}
+
+.placeholderBox:hover .image {
+  filter: grayscale(0);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.contentColumn {
+  flex: 1;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+}
+
+.featureBlock {
+  min-height: 50vh; /* gives enough scrolling distance for each feature */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featureIndex {
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.featureTitle {
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--tracking-tight);
+}
+
+.featureDesc {
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+@media (max-width: 992px) {
+  .layout {
+    flex-direction: column;
+  }
+  
+  .visualColumn {
+    height: 40vh;
+    position: sticky;
+    top: var(--space-24);
+    z-index: 10;
+  }
+  
+  .contentColumn {
+    padding-top: var(--space-8);
+  }
+  
+  .featureBlock {
+    min-height: auto;
+    padding: var(--space-12) 0;
+  }
+}

@@ -1,0 +1,241 @@
+.storyContainer {
+  position: relative;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+}
+
+.leftColumn {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: var(--space-2);
+}
+
+.eyebrowIcon {
+  color: var(--color-accent-primary);
+}
+
+.metaLabel {
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.statement {
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+}
+
+.accent {
+  color: var(--color-accent-primary);
+  background: linear-gradient(135deg, #67D9FF, #3BA7FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.academicBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono-var);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+}
+
+.academicDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-primary);
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  z-index: 2;
+}
+
+.teaserBlock {
+  padding: var(--space-4) var(--space-5);
+  border-radius: 14px;
+  background: rgba(5, 8, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.prose {
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+/* ── Philosophy Nodes (Compact grid layout) ──────────────────── */
+.philosophyList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .philosophyList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(5, 8, 18, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast);
+}
+
+@media (hover: hover) {
+  .node:hover {
+    border-color: rgba(103, 217, 255, 0.4);
+    background: rgba(103, 217, 255, 0.06);
+    transform: translateY(-2px);
+  }
+}
+
+.nodeIndex {
+  font-family: var(--font-mono-var);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+}
+
+.nodeBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nodeTitle {
+  color: var(--color-text-primary);
+  font-family: var(--font-mono-var);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nodeDesc {
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.actionWrapper {
+  margin-top: var(--space-1);
+}
+
+.readMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(103, 217, 255, 0.3);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono-var);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.readMoreBtn:hover {
+  background: rgba(103, 217, 255, 0.15);
+  border-color: var(--color-accent-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(103, 217, 255, 0.25);
+}
+
+/* ── Light Mode Styles ────────────────────────────────────────── */
+[data-theme="light"] .metaLabel {
+  color: #0284C7;
+}
+
+[data-theme="light"] .accent {
+  background: linear-gradient(135deg, #0284C7, #2563EB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .academicBadge {
+  background: rgba(7, 17, 31, 0.04);
+  border-color: rgba(7, 17, 31, 0.1);
+  color: #475569;
+}
+
+[data-theme="light"] .teaserBlock {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(7, 17, 31, 0.08);
+}
+
+[data-theme="light"] .node {
+  border-color: rgba(7, 17, 31, 0.1);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+[data-theme="light"] .node:hover {
+  border-color: rgba(2, 132, 199, 0.4);
+  background: rgba(2, 132, 199, 0.04);
+}
+
+[data-theme="light"] .nodeTitle {
+  color: #07111F;
+}
+
+[data-theme="light"] .nodeDesc {
+  color: #475569;
+}
+
+[data-theme="light"] .readMoreBtn {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(2, 132, 199, 0.3);
+  color: #07111F;
+}
+
+[data-theme="light"] .readMoreBtn:hover {
+  background: rgba(2, 132, 199, 0.08);
+  border-color: #0284C7;
+  color: #0284C7;
+}

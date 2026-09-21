@@ -1,0 +1,286 @@
+/* ============================================================
+   Dedicated About Page Styles
+   Guarantees Content Left (58%), Bounded Photo Right (42%)
+   ============================================================ */
+
+.pageGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .pageGrid {
+    grid-template-columns: 1.38fr 1fr;
+    gap: var(--space-14);
+  }
+}
+
+/* ── Left Column: Editorial & Philosophy Content (58%) ──────── */
+.contentColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.signalBlocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.signalBlock {
+  padding: var(--space-6);
+  border-radius: 16px;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.25s ease;
+}
+
+.signalBlock:hover {
+  border-color: rgba(103, 217, 255, 0.4);
+}
+
+.signalEyebrow {
+  font-family: var(--font-mono-var);
+  font-size: 0.75rem;
+  color: var(--color-accent-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.signalText {
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.authorHighlight {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+/* ── Philosophy Section ─────────────────────────────────────── */
+.philosophySection {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+  width: 100%;
+}
+
+.philosophyHeading {
+  font-family: var(--font-mono-var);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .philosophyGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.philosophyCard {
+  padding: var(--space-5);
+  border-radius: 12px;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: all 0.3s ease;
+}
+
+.philosophyCard:hover {
+  border-color: rgba(103, 217, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.philosophyIndex {
+  font-family: var(--font-mono-var);
+  font-size: 0.75rem;
+  color: var(--color-accent-primary);
+  font-weight: 700;
+}
+
+.philosophyTitle {
+  font-family: var(--font-mono-var);
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.philosophyDesc {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Right Column: Bounded Profile Photo & Credentials (42%) ─── */
+.photoSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+@media (min-width: 1024px) {
+  .photoSidebar {
+    position: sticky;
+    top: 6rem;
+    align-items: stretch;
+  }
+}
+
+.photoFrame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(103, 217, 255, 0.25);
+  background: #030712;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(103, 217, 255, 0.1);
+}
+
+.photoElement {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photoGradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3, 7, 18, 0.6) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.credentialCard {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: var(--space-5);
+  border-radius: 16px;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-card);
+}
+
+.credentialHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: var(--space-2);
+}
+
+.credentialIcon {
+  color: var(--color-accent-primary);
+}
+
+.credentialEyebrow {
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.credentialDegree {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.credentialInst {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.25rem;
+}
+
+.credentialMeta {
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  color: var(--color-accent-primary);
+  margin-top: 0.25rem;
+}
+
+.domainCluster {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.domainPill {
+  font-family: var(--font-mono-var);
+  font-size: 0.7rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+}
+
+.sidebarAction {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.contactCtaLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(103, 217, 255, 0.1);
+  border: 1px solid rgba(103, 217, 255, 0.3);
+  color: var(--color-accent-primary);
+  font-family: var(--font-mono-var);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.contactCtaLink:hover {
+  background: rgba(103, 217, 255, 0.2);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}

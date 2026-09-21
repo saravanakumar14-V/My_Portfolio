@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" fill="#040814" />
+  <rect x="50" y="40" width="300" height="40" rx="6" fill="#081024" stroke="rgba(103, 217, 255, 0.3)" />
+  <text x="70" y="65" fill="#67D9FF" font-family="monospace" font-size="12" font-weight="600">REZEL // SYSTEM ARCHITECTURE</text>
+
+  <!-- Architecture Flow -->
+  <g transform="translate(100, 130)">
+    <rect x="0" y="0" width="260" height="90" rx="10" fill="#09142B" stroke="#3BA7FF" stroke-width="1.5" />
+    <text x="20" y="35" fill="#67D9FF" font-family="monospace" font-size="12" font-weight="700">Tauri Rust Native Shell</text>
+    <text x="20" y="60" fill="#A0B4D8" font-family="monospace" font-size="10">System Tray · Window Manager</text>
+
+    <line x1="260" y1="45" x2="340" y2="45" stroke="#3BA7FF" stroke-width="2" stroke-dasharray="4 4" />
+
+    <rect x="340" y="0" width="260" height="90" rx="10" fill="#09142B" stroke="#67D9FF" stroke-width="1.5" />
+    <text x="360" y="35" fill="#67D9FF" font-family="monospace" font-size="12" font-weight="700">React Three Fiber Canvas</text>
+    <text x="360" y="60" fill="#A0B4D8" font-family="monospace" font-size="10">WebGL 3D Interaction Viewport</text>
+  </g>
+
+  <g transform="translate(100, 260)">
+    <rect x="0" y="0" width="260" height="90" rx="10" fill="#09142B" stroke="#3BA7FF" stroke-width="1.5" />
+    <text x="20" y="35" fill="#67D9FF" font-family="monospace" font-size="12" font-weight="700">AI Agent &amp; Planner</text>
+    <text x="20" y="60" fill="#A0B4D8" font-family="monospace" font-size="10">Intent Inference · Tool Dispatch</text>
+
+    <line x1="260" y1="45" x2="340" y2="45" stroke="#3BA7FF" stroke-width="2" stroke-dasharray="4 4" />
+
+    <rect x="340" y="0" width="260" height="90" rx="10" fill="#09142B" stroke="#67D9FF" stroke-width="1.5" />
+    <text x="360" y="35" fill="#67D9FF" font-family="monospace" font-size="12" font-weight="700">SQLite Vector Memory</text>
+    <text x="360" y="60" fill="#A0B4D8" font-family="monospace" font-size="10">Embedded On-Device Storage</text>
+  </g>
+</svg>

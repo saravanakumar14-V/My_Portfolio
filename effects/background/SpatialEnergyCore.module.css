@@ -1,0 +1,47 @@
+.container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.core {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(103, 217, 255, 0.08) 0%, rgba(59, 167, 255, 0.03) 40%, transparent 70%);
+  filter: blur(40px);
+  opacity: 0.5;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20% 30%, rgba(103, 217, 255, 0.4) 100%, transparent),
+    radial-gradient(1.5px 1.5px at 70% 60%, rgba(103, 217, 255, 0.3) 100%, transparent),
+    radial-gradient(1px 1px at 40% 80%, rgba(59, 167, 255, 0.4) 100%, transparent),
+    radial-gradient(2px 2px at 80% 20%, rgba(103, 217, 255, 0.2) 100%, transparent);
+  background-size: 200px 200px;
+  opacity: 0.3;
+  animation: drift 60s linear infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(-200px) rotate(5deg);
+  }
+}

@@ -1,0 +1,407 @@
+/* ============================================================
+   HeroSection Phase 16 — Profile Photo Visual Anchor & Layout
+   ============================================================ */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: 75px;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 120px);
+  min-height: calc(100dvh - 120px);
+  width: 100%;
+  gap: var(--space-6);
+  z-index: 2;
+  position: relative;
+}
+
+/* ── Top System Header Frame ─────────────────────────────────── */
+.topSystemBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.systemSignal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+}
+
+.signalIcon {
+  color: var(--color-accent-primary);
+}
+
+.availabilityRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.statusLive {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+.livePulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: pulseBeacon 2s infinite ease-in-out;
+}
+
+@keyframes pulseBeacon {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.75); opacity: 0.4; }
+}
+
+/* ── Asymmetric Multi-Zone Core ───────────────────────────────── */
+.asymmetricGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  padding: var(--space-4) 0;
+}
+
+@media (min-width: 1024px) {
+  .asymmetricGrid {
+    grid-template-columns: 6.8fr 5.2fr;
+    gap: var(--space-12);
+  }
+}
+
+/* ── Zone 1: Statement & Identity ────────────────────────────── */
+.statementZone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.subIdentityPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  background: rgba(103, 217, 255, 0.08);
+  border: 1px solid rgba(103, 217, 255, 0.25);
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: var(--space-1);
+}
+
+.subIcon {
+  color: var(--color-accent-primary);
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.4vw + 0.5rem, 5.4rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: var(--color-text-primary);
+}
+
+.headWord {
+  display: block;
+}
+
+.headAccent {
+  display: block;
+  color: var(--color-accent-primary);
+  background: linear-gradient(135deg, #67D9FF, #3BA7FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.positioningText {
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 52ch;
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.authorHighlight {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* ── Actions Cluster ─────────────────────────────────────────── */
+.actionCluster {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.primaryActionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.btnArrow {
+  transition: transform 0.25s ease;
+}
+
+.primaryActionBtn:hover .btnArrow {
+  transform: translateX(3px);
+}
+
+.secondaryActionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono-var);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.secondaryActionBtn:hover {
+  background: rgba(103, 217, 255, 0.08);
+  border-color: var(--color-accent-primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.ghostArrow {
+  transition: transform 0.25s ease;
+}
+
+.secondaryActionBtn:hover .ghostArrow {
+  transform: translateY(-1px) translateX(1px);
+}
+
+/* ── Zone 2: Profile Photo Visual Anchor ──────────────────────── */
+.profileVisualZone {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.profileCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px;
+  background: rgba(6, 12, 28, 0.75);
+  border: 1px solid rgba(103, 217, 255, 0.22);
+  backdrop-filter: blur(16px);
+  padding: var(--space-4);
+  text-decoration: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.profileCard:hover {
+  border-color: rgba(103, 217, 255, 0.5);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(103, 217, 255, 0.15);
+}
+
+.cardGlowBackdrop {
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  background: radial-gradient(circle at 50% 20%, rgba(103, 217, 255, 0.15), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.photoContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #030712;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.profileCard:hover .profileImage {
+  transform: scale(1.02);
+}
+
+.photoGradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(3, 7, 18, 0.75) 0%,
+    rgba(3, 7, 18, 0.18) 30%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.photoOverlayBadge {
+  position: absolute;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(4, 8, 20, 0.85);
+  border: 1px solid rgba(103, 217, 255, 0.4);
+  backdrop-filter: blur(8px);
+  color: var(--color-accent-primary);
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+
+.profileCard:hover .photoOverlayBadge {
+  opacity: 1;
+  background: rgba(103, 217, 255, 0.15);
+  border-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+
+/* ── Compact Rezel Indicator Row ─────────────────────────────── */
+.rezelIndicatorRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 1;
+}
+
+.rezelMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sparkleIcon {
+  color: var(--color-accent-primary);
+}
+
+.rezelMetaTitle {
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  letter-spacing: 0.08em;
+}
+
+.rezelMetaSub {
+  font-family: var(--font-mono-var);
+  font-size: 0.65rem;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+/* ── Bottom System Navigation Cue ────────────────────────────── */
+.bottomSystemBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.scrollAffordance {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+
+.scrollAffordance:hover {
+  color: var(--color-accent-primary);
+}
+
+.scrollIndicatorLine {
+  width: 20px;
+  height: 2px;
+  background: var(--color-accent-primary);
+  border-radius: 1px;
+}
+
+.scrollText {
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}

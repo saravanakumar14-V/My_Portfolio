@@ -1,0 +1,85 @@
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+  max-width: 800px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5, 0.6rem);
+  font-family: var(--font-mono-var);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.numberBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(103, 217, 255, 0.12);
+  border: 1px solid rgba(103, 217, 255, 0.3);
+  color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
+.categoryLabel {
+  color: var(--color-accent-primary);
+  font-weight: 500;
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.65rem;
+}
+
+.metaText {
+  color: var(--color-text-tertiary);
+}
+
+.title {
+  color: var(--color-text-primary);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: var(--space-1) 0;
+}
+
+.tagline {
+  max-width: 58ch;
+  line-height: 1.6;
+  font-size: 1.15rem;
+}
+
+@media (max-width: 640px) {
+  .headerWrapper {
+    margin-bottom: var(--space-6);
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+}
+
+/* ── Light Mode Styles ────────────────────────────────────────── */
+[data-theme="light"] .numberBadge {
+  background: rgba(2, 132, 199, 0.1);
+  border-color: rgba(2, 132, 199, 0.25);
+  color: #0284C7;
+}
+
+[data-theme="light"] .categoryLabel {
+  color: #0284C7;
+}
+
+[data-theme="light"] .divider {
+  color: rgba(7, 17, 31, 0.2);
+}
+
+[data-theme="light"] .title {
+  color: #07111F;
+}

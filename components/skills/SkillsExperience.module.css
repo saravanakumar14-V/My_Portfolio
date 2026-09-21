@@ -1,0 +1,202 @@
+.skillsSection {
+  position: relative;
+}
+
+.header {
+  margin-bottom: var(--space-8);
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: var(--space-2);
+}
+
+.eyebrowIcon {
+  color: var(--color-accent-primary);
+}
+
+.metaLabel {
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-bottom: var(--space-1);
+}
+
+.description {
+  max-width: 620px;
+}
+
+/* ── Tech Stack Categorized Grid ─────────────────────────────── */
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: 12px;
+  background: rgba(5, 8, 18, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.categoryCard:hover {
+  background: rgba(8, 12, 24, 0.9);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: var(--space-2-5, 0.65rem);
+}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.02em;
+}
+
+.categoryCount {
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
+.skillsPillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1-5, 6px);
+}
+
+.skillPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
+}
+
+.skillPill:hover {
+  color: var(--color-text-primary);
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.actionWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+.certLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono-var);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.certLink:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--color-accent-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+}
+
+/* ── Light Mode Styles ────────────────────────────────────────── */
+[data-theme="light"] .metaLabel {
+  color: #0284c7;
+}
+
+[data-theme="light"] .categoryCard {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(7, 17, 31, 0.08);
+}
+
+[data-theme="light"] .categoryCard:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 8px 24px -6px rgba(7, 17, 31, 0.08);
+}
+
+[data-theme="light"] .categoryTitle {
+  color: #07111f;
+}
+
+[data-theme="light"] .categoryHeader {
+  border-bottom-color: rgba(7, 17, 31, 0.06);
+}
+
+[data-theme="light"] .skillPill {
+  background: rgba(7, 17, 31, 0.03);
+  border-color: rgba(7, 17, 31, 0.08);
+  color: #475569;
+}
+
+[data-theme="light"] .skillPill:hover {
+  color: #07111f;
+  background: rgba(2, 132, 199, 0.08);
+  border-color: #0284c7;
+}
+
+[data-theme="light"] .certLink {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(2, 132, 199, 0.3);
+  color: #07111f;
+}
+
+[data-theme="light"] .certLink:hover {
+  background: rgba(2, 132, 199, 0.08);
+  border-color: #0284c7;
+  color: #0284c7;
+}

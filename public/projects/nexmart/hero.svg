@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad-nex" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02040A" />
+      <stop offset="50%" stop-color="#071328" />
+      <stop offset="100%" stop-color="#02040A" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg-grad-nex)" />
+
+  <!-- App Window Container -->
+  <rect x="120" y="70" width="960" height="535" rx="16" fill="#060C1B" stroke="rgba(59, 130, 246, 0.3)" stroke-width="1.5" />
+
+  <!-- Header -->
+  <rect x="120" y="70" width="960" height="50" rx="16" fill="#09142E" />
+  <circle cx="155" cy="95" r="6" fill="#FF5F56" />
+  <circle cx="175" cy="95" r="6" fill="#FFBD2E" />
+  <circle cx="195" cy="95" r="6" fill="#27C93F" />
+  <text x="600" y="100" fill="#3B82F6" font-family="monospace" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="2">NEXMART // FULL-STACK E-COMMERCE STOREFRONT</text>
+  <rect x="940" y="83" width="115" height="24" rx="4" fill="rgba(59, 130, 246, 0.15)" stroke="rgba(59, 130, 246, 0.3)" />
+  <text x="997" y="99" fill="#3B82F6" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle">COMPLETED</text>
+
+  <!-- Left: Storefront Product Catalog Grid -->
+  <rect x="150" y="145" width="550" height="430" rx="10" fill="#0A1630" stroke="rgba(255, 255, 255, 0.05)" />
+  <text x="175" y="180" fill="#88A0C8" font-family="monospace" font-size="11" font-weight="600" letter-spacing="1">DYNAMIC PRODUCT CATALOG</text>
+
+  <!-- Search & Category Filters -->
+  <g transform="translate(175, 200)">
+    <rect x="0" y="0" width="300" height="32" rx="6" fill="#060C1B" stroke="rgba(255, 255, 255, 0.08)" />
+    <text x="15" y="20" fill="#88A0C8" font-family="monospace" font-size="10">🔍 Search catalog products...</text>
+
+    <rect x="315" y="0" width="90" height="32" rx="6" fill="rgba(59, 130, 246, 0.15)" stroke="rgba(59, 130, 246, 0.3)" />
+    <text x="360" y="20" fill="#60A5FA" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle">All Items</text>
+
+    <rect x="415" y="0" width="85" height="32" rx="6" fill="#060C1B" stroke="rgba(255, 255, 255, 0.08)" />
+    <text x="457" y="20" fill="#88A0C8" font-family="monospace" font-size="10" text-anchor="middle">Tech</text>
+  </g>
+
+  <!-- Product Item Cards Grid -->
+  <g transform="translate(175, 250)">
+    <!-- Product 1 -->
+    <rect x="0" y="0" width="155" height="150" rx="8" fill="#060C1B" stroke="rgba(255, 255, 255, 0.06)" />
+    <rect x="15" y="15" width="125" height="65" rx="4" fill="#0E1B38" />
+    <text x="77" y="52" fill="#3B82F6" font-family="monospace" font-size="10" text-anchor="middle">PRODUCT #01</text>
+    <text x="15" y="105" fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="600">Wireless Audio</text>
+    <text x="15" y="125" fill="#34D399" font-family="monospace" font-size="11" font-weight="700">$129.00</text>
+
+    <!-- Product 2 -->
+    <rect x="175" y="0" width="155" height="150" rx="8" fill="#060C1B" stroke="rgba(255, 255, 255, 0.06)" />
+    <rect x="190" y="15" width="125" height="65" rx="4" fill="#0E1B38" />
+    <text x="252" y="52" fill="#3B82F6" font-family="monospace" font-size="10" text-anchor="middle">PRODUCT #02</text>
+    <text x="190" y="105" fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="600">Mechanical Key</text>
+    <text x="190" y="125" fill="#34D399" font-family="monospace" font-size="11" font-weight="700">$189.00</text>
+
+    <!-- Product 3 -->
+    <rect x="350" y="0" width="150" height="150" rx="8" fill="#060C1B" stroke="rgba(255, 255, 255, 0.06)" />
+    <rect x="365" y="15" width="120" height="65" rx="4" fill="#0E1B38" />
+    <text x="425" y="52" fill="#3B82F6" font-family="monospace" font-size="10" text-anchor="middle">PRODUCT #03</text>
+    <text x="365" y="105" fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="600">Smart Sensor</text>
+    <text x="365" y="125" fill="#34D399" font-family="monospace" font-size="11" font-weight="700">$79.00</text>
+  </g>
+
+  <!-- Telemetry Strip -->
+  <rect x="175" y="420" width="500" height="35" rx="6" fill="#060C1B" stroke="rgba(255, 255, 255, 0.05)" />
+  <text x="195" y="442" fill="#88A0C8" font-family="monospace" font-size="10">✓ Reactive Client State · Node.js Backend API · Instant Filtering</text>
+
+  <!-- Right: Shopping Cart Drawer & Checkout -->
+  <rect x="720" y="145" width="330" height="430" rx="10" fill="#071124" stroke="rgba(255, 255, 255, 0.05)" />
+  <text x="745" y="180" fill="#88A0C8" font-family="monospace" font-size="11" font-weight="600" letter-spacing="1">SHOPPING CART (2 ITEMS)</text>
+
+  <!-- Cart Items List -->
+  <g transform="translate(745, 205)">
+    <rect x="0" y="0" width="280" height="65" rx="6" fill="#050A18" stroke="rgba(255, 255, 255, 0.06)" />
+    <text x="15" y="28" fill="#FFFFFF" font-family="sans-serif" font-size="11" font-weight="600">Wireless Audio (x1)</text>
+    <text x="15" y="50" fill="#34D399" font-family="monospace" font-size="11" font-weight="700">$129.00</text>
+
+    <rect x="0" y="80" width="280" height="65" rx="6" fill="#050A18" stroke="rgba(255, 255, 255, 0.06)" />
+    <text x="15" y="108" fill="#FFFFFF" font-family="sans-serif" font-size="11" font-weight="600">Mechanical Key (x1)</text>
+    <text x="15" y="130" fill="#34D399" font-family="monospace" font-size="11" font-weight="700">$189.00</text>
+  </g>
+
+  <!-- Order Summary & Checkout -->
+  <rect x="745" y="370" width="280" height="180" rx="8" fill="#030612" stroke="rgba(255, 255, 255, 0.08)" />
+  <text x="765" y="405" fill="#88A0C8" font-family="monospace" font-size="11">Subtotal: $318.00</text>
+  <text x="765" y="430" fill="#88A0C8" font-family="monospace" font-size="11">Shipping: FREE</text>
+  <text x="765" y="460" fill="#34D399" font-family="monospace" font-size="13" font-weight="700">Total: $318.00</text>
+
+  <rect x="765" y="485" width="240" height="42" rx="6" fill="rgba(59, 130, 246, 0.2)" stroke="#3B82F6" stroke-width="1.5" />
+  <text x="885" y="511" fill="#60A5FA" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle">PROCEED TO CHECKOUT ↗</text>
+</svg>

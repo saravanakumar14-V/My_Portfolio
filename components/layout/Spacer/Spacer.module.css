@@ -1,0 +1,22 @@
+/* Spacer Component Styles */
+
+.spacer {
+  display: block;
+  flex: none;
+}
+
+/* ── Vertical ────────────────────────────────────────────────── */
+.vertical.size-xs { height: var(--space-4); }
+.vertical.size-sm { height: var(--space-8); }
+.vertical.size-md { height: var(--space-12); }
+.vertical.size-lg { height: var(--space-16); }
+.vertical.size-xl { height: var(--space-24); }
+.vertical.size-xxl { height: var(--space-32); }
+
+/* ── Horizontal ──────────────────────────────────────────────── */
+.horizontal.size-xs { width: var(--space-4); }
+.horizontal.size-sm { width: var(--space-8); }
+.horizontal.size-md { width: var(--space-12); }
+.horizontal.size-lg { width: var(--space-16); }
+.horizontal.size-xl { width: var(--space-24); }
+.horizontal.size-xxl { width: var(--space-32); }

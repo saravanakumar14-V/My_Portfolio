@@ -1,0 +1,59 @@
+/* ============================================================
+   TYPOGRAPHY TOKENS
+   Design System — Portfolio
+   Scale: Major Third (1.250 ratio)
+   Font families: Space Grotesk + Inter + JetBrains Mono
+   Rule: All font sizes use clamp() for fluid scaling.
+   ============================================================ */
+
+:root {
+  /* ── Font Families ──────────────────────────────────────── */
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono-var: 'JetBrains Mono', monospace;
+  --font-space-grotesk: 'Space Grotesk', system-ui, sans-serif;
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-mono-var);
+  --font-display: var(--font-space-grotesk);
+
+  /* ── Type Scale (Major Third — 1.250 ratio) ─────────────── */
+  /* clamp(min, preferred, max) — fluid between 320px and 1440px viewports */
+  --text-xs:    clamp(0.694rem, 0.66rem + 0.17vw,  0.8rem);      /* ~11–13px */
+  --text-sm:    clamp(0.833rem, 0.79rem + 0.22vw,  0.96rem);     /* ~13–15px */
+  --text-base:  clamp(1rem,     0.95rem + 0.25vw,  1.15rem);     /* ~16–18px */
+  --text-lg:    clamp(1.2rem,   1.1rem  + 0.5vw,   1.44rem);     /* ~19–23px */
+  --text-xl:    clamp(1.44rem,  1.28rem + 0.8vw,   1.8rem);      /* ~23–29px */
+  --text-2xl:   clamp(1.728rem, 1.48rem + 1.24vw,  2.25rem);     /* ~28–36px */
+  --text-3xl:   clamp(2.074rem, 1.7rem  + 1.87vw,  2.813rem);    /* ~33–45px */
+  --text-4xl:   clamp(2.488rem, 1.94rem + 2.74vw,  3.815rem);    /* ~40–61px */
+  --text-5xl:   clamp(2.986rem, 2.2rem  + 3.93vw,  4.769rem);    /* ~48–76px */
+  --text-6xl:   clamp(3.583rem, 2.5rem  + 5.42vw,  6.25rem);     /* ~57–100px — display only */
+
+  /* ── Line Heights ───────────────────────────────────────── */
+  --leading-none:    1;
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose:   1.8;
+
+  /* ── Letter Spacing ─────────────────────────────────────── */
+  --tracking-tighter: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-normal:   0em;
+  --tracking-wide:     0.025em;
+  --tracking-wider:    0.05em;
+  --tracking-widest:   0.1em;
+
+  /* ── Font Weights ───────────────────────────────────────── */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ── Reading Measure ────────────────────────────────────── */
+  --measure-narrow:  45ch;   /* Short reads, captions */
+  --measure-default: 65ch;   /* Body text — optimal reading width */
+  --measure-wide:    80ch;   /* Max content width */
+}

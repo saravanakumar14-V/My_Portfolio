@@ -1,0 +1,65 @@
+.archSection {
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+}
+
+.label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  color: var(--color-text-primary);
+}
+
+.diagram {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  justify-content: center;
+  padding: var(--space-12) 0;
+}
+
+.node {
+  flex: 1 1 300px;
+  max-width: 400px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+}
+
+.dimmed {
+  opacity: 0.2;
+  transform: scale(0.98);
+}
+
+.nodeCard {
+  height: 100%;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.nodeType {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.nodeLabel {
+  color: var(--color-text-primary);
+}
+
+.nodeDetails {
+  margin-top: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.node:hover .nodeDetails {
+  opacity: 1;
+}

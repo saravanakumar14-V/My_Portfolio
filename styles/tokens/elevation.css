@@ -1,0 +1,59 @@
+/* ============================================================
+   ELEVATION TOKENS
+   Design System — Portfolio
+   Includes: shadows, border radius, blur, z-index
+   Rule: Use background color shifts FIRST for elevation.
+         Shadows used sparingly, never sharp black.
+   ============================================================ */
+
+:root {
+  /* ── Box Shadows ────────────────────────────────────────── */
+  /* Tinted with base hue (225). Never pure black. */
+  --shadow-xs:  0 1px 2px  hsla(225, 15%, 0%, 0.15);
+  --shadow-sm:  0 2px 4px  hsla(225, 15%, 0%, 0.15),
+                0 1px 2px  hsla(225, 15%, 0%, 0.1);
+  --shadow-md:  0 4px 8px  hsla(225, 15%, 0%, 0.15),
+                0 2px 4px  hsla(225, 15%, 0%, 0.1);
+  --shadow-lg:  0 8px 24px hsla(225, 15%, 0%, 0.2),
+                0 4px 8px  hsla(225, 15%, 0%, 0.1);
+  --shadow-xl:  0 16px 48px hsla(225, 15%, 0%, 0.25),
+                0 8px 16px  hsla(225, 15%, 0%, 0.15);
+
+  /* Accent glow — reserved for primary CTA & active indicators */
+  --shadow-glow:     0 0 20px var(--color-accent-glow);
+  --shadow-glow-sm:  0 0 12px var(--color-accent-glow);
+  --shadow-glow-lg:  0 0 40px var(--color-accent-glow),
+                     0 0 80px hsla(36, 85%, 60%, 0.08);
+
+  /* Inner shadow — for inset depth */
+  --shadow-inner: inset 0 1px 3px hsla(225, 15%, 0%, 0.2);
+
+  /* ── Border Radius ──────────────────────────────────────── */
+  /* Radius signals component type — not aesthetic preference */
+  --radius-none: 0;
+  --radius-sm:   0.25rem;   /* 4px  — Tags, badges, code, tooltips */
+  --radius-md:   0.5rem;    /* 8px  — Buttons, inputs, nav items */
+  --radius-lg:   0.75rem;   /* 12px — Cards, panels, images */
+  --radius-xl:   1rem;      /* 16px — Featured cards, modals */
+  --radius-2xl:  1.5rem;    /* 24px — Large decorative surfaces */
+  --radius-3xl:  2rem;      /* 32px — Hero/special sections */
+  --radius-full: 9999px;    /* Pill — Avatars, pill buttons, indicators */
+
+  /* ── Blur Scale ─────────────────────────────────────────── */
+  /* Max: 20px. Never blur text containers. */
+  --blur-xs:     4px;       /* Tooltips, subtle frosting */
+  --blur-sm:     8px;       /* Nav header on scroll */
+  --blur-md:     12px;      /* Standard glass panels */
+  --blur-lg:     20px;      /* Maximum — modal overlays */
+
+  /* ── Z-Index Scale ──────────────────────────────────────── */
+  --z-base:      0;
+  --z-above:     10;
+  --z-dropdown:  50;
+  --z-nav:       100;
+  --z-overlay:   200;
+  --z-modal:     300;
+  --z-cursor:    400;
+  --z-toast:     500;
+  --z-top:       999;
+}

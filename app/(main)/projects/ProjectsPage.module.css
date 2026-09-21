@@ -1,0 +1,25 @@
+/* ProjectsPage Component Styles */
+
+.header {
+  margin-bottom: var(--space-12);
+}
+
+.title {
+  margin-bottom: var(--space-4);
+}
+
+.description {
+  max-width: 55ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

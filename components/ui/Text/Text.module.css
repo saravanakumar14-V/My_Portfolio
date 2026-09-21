@@ -1,0 +1,41 @@
+/* Text Component Styles */
+
+.text {
+  font-family: var(--font-sans);
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.size-xs { font-size: var(--text-xs); line-height: var(--leading-normal); }
+.size-sm { font-size: var(--text-sm); line-height: var(--leading-normal); }
+.size-base { font-size: var(--text-base); }
+.size-lg { font-size: var(--text-lg); }
+.size-xl { font-size: var(--text-xl); line-height: var(--leading-snug); }
+
+/* ── Weights ────────────────────────────────────────────────── */
+.weight-light { font-weight: var(--weight-light); }
+.weight-regular { font-weight: var(--weight-regular); }
+.weight-medium { font-weight: var(--weight-medium); }
+.weight-semibold { font-weight: var(--weight-semibold); }
+.weight-bold { font-weight: var(--weight-bold); }
+
+/* ── Colors ─────────────────────────────────────────────────── */
+.color-primary { color: var(--color-text-primary); }
+.color-secondary { color: var(--color-text-secondary); }
+.color-tertiary { color: var(--color-text-tertiary); }
+.color-inverse { color: var(--color-text-inverse); }
+.color-accent { color: var(--color-accent-primary); }
+.color-error { color: var(--color-error); }
+.color-success { color: var(--color-success); }
+
+/* ── Alignment ──────────────────────────────────────────────── */
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+.align-justify { text-align: justify; }
+
+/* ── Utilities ──────────────────────────────────────────────── */
+.balance {
+  text-wrap: balance;
+}

@@ -1,0 +1,123 @@
+.gooeyFilter {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.mobileNav {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: none;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.mobileNav.open {
+  display: flex;
+  pointer-events: auto;
+}
+
+.bubbleBackground {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-primary, #050508);
+  clip-path: circle(0% at 100% 0%);
+  filter: url(#goo);
+  opacity: 0.98;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  will-change: clip-path;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 8rem 2rem 4rem;
+  opacity: 0;
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.mobileNavNumber {
+  font-family: var(--font-mono-var);
+  font-size: 1rem;
+  color: var(--color-accent);
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.mobileNavLink:hover,
+.mobileNavLinkActive {
+  color: var(--text-primary);
+}
+
+.mobileNavLinkActive .mobileNavNumber {
+  opacity: 1;
+}
+
+.mobileNavFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobileCta {
+  font-family: var(--font-mono-var);
+  font-size: 1.125rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 769px) {
+  .mobileNav {
+    display: none !important;
+  }
+}
+
+/* ── Light Mode Styles ────────────────────────────────────────── */
+[data-theme="light"] .bubbleBackground {
+  background: rgba(246, 249, 252, 0.98);
+}
+
+[data-theme="light"] .mobileNavLink {
+  color: #475569;
+}
+
+[data-theme="light"] .mobileNavLink:hover,
+[data-theme="light"] .mobileNavLinkActive {
+  color: #07111F;
+}
+
+[data-theme="light"] .mobileCta {
+  color: #0284C7;
+  border-bottom-color: rgba(7, 17, 31, 0.15);
+}

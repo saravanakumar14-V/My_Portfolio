@@ -1,0 +1,503 @@
+/* ============================================================
+   InteractiveTimeline Component Styles — Product-Level UX
+   ============================================================ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+/* ── Interactive Horizontal Axis ──────────────────────────────── */
+.axisWrapper {
+  position: relative;
+  width: 100%;
+  padding: var(--space-4) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(103, 217, 255, 0.2) transparent;
+}
+
+.axisLine {
+  position: absolute;
+  top: 36px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(103, 217, 255, 0.1), rgba(103, 217, 255, 0.5) 50%, rgba(103, 217, 255, 0.1));
+  z-index: 1;
+}
+
+.milestoneNodes {
+  display: flex;
+  justify-content: space-between;
+  min-width: 650px;
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--space-4);
+}
+
+.nodeButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.nodeButton:hover .nodeDate {
+  color: var(--color-accent-primary);
+}
+
+.nodeIndicator {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nodeDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-bg-elevated);
+  border: 2px solid var(--color-border-subtle);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.nodeButton:hover .nodeDot {
+  border-color: var(--color-accent-primary);
+  transform: scale(1.15);
+}
+
+.activeNode .nodeDot {
+  background-color: var(--color-accent-primary);
+  transform: scale(1.3);
+  box-shadow: 0 0 12px var(--color-accent-primary);
+}
+
+.nodePulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-accent-primary);
+  animation: ripple 2s infinite ease-out;
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.nodeMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-mono-var);
+}
+
+.nodeDate {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  transition: color 0.25s ease;
+}
+
+.activeNode .nodeDate {
+  color: var(--color-accent-primary);
+}
+
+.nodeCompany {
+  font-size: 0.65rem;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Active Milestone Spotlight Card ─────────────────────────── */
+.spotlightCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  border-radius: 20px;
+  background: rgba(5, 8, 18, 0.85);
+  border: 1px solid rgba(103, 217, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 
+    inset 0 0 20px rgba(103, 217, 255, 0.05),
+    0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.indexBadge {
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(103, 217, 255, 0.1);
+  color: var(--color-accent-primary);
+  border: 1px solid rgba(103, 217, 255, 0.2);
+}
+
+.typeBadge {
+  font-family: var(--font-mono-var);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-secondary);
+}
+
+.currentBadge {
+  font-family: var(--font-mono-var);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.completedBadge {
+  font-family: var(--font-mono-var);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.roleTitle {
+  color: #FFFFFF;
+  margin-bottom: var(--space-2);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-mono-var);
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.metaIcon {
+  color: var(--color-accent-primary);
+}
+
+.metaDivider {
+  color: var(--color-text-tertiary);
+}
+
+.stepperControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.stepBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stepBtn:hover {
+  background: rgba(103, 217, 255, 0.12);
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  transform: translateY(-1px);
+}
+
+.description {
+  line-height: 1.65;
+  max-width: 75ch;
+}
+
+.highlightsBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: 12px;
+  background: rgba(103, 217, 255, 0.03);
+  border: 1px solid rgba(103, 217, 255, 0.1);
+}
+
+.highlightsTitle {
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-primary);
+}
+
+.highlightsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+.checkIcon {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+.techSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.techLabel {
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.techPill {
+  font-family: var(--font-mono-var);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-secondary);
+}
+
+.credentialLinkRow {
+  margin-top: var(--space-2);
+  display: flex;
+  align-items: center;
+}
+
+.certBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  background: rgba(103, 217, 255, 0.08);
+  border: 1px solid rgba(103, 217, 255, 0.25);
+  color: var(--color-accent-primary);
+  font-family: var(--font-mono-var);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.certBtn:hover {
+  background: rgba(103, 217, 255, 0.16);
+  border-color: var(--color-accent-primary);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* ── Compact Milestone Grid ──────────────────────────────────── */
+.quickJumpSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.quickJumpLabel {
+  font-family: var(--font-mono-var);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+}
+
+.quickGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+.quickCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: var(--space-4);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.quickCard:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(103, 217, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.selectedQuickCard {
+  background: rgba(103, 217, 255, 0.08);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 16px rgba(103, 217, 255, 0.15);
+}
+
+.quickHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-mono-var);
+  font-size: 0.7rem;
+}
+
+.quickDate {
+  color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
+.quickIndex {
+  color: var(--color-text-tertiary);
+}
+
+.quickRole {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: 2px;
+}
+
+.quickCompany {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+}
+
+/* ── Light Mode Styles ────────────────────────────────────────── */
+[data-theme="light"] .axisLine {
+  background: linear-gradient(90deg, rgba(2, 132, 199, 0.2), rgba(2, 132, 199, 0.6) 50%, rgba(2, 132, 199, 0.2));
+}
+
+[data-theme="light"] .nodeDot {
+  background-color: rgba(7, 17, 31, 0.25);
+  border-color: #F6F9FC;
+}
+
+[data-theme="light"] .nodeDate {
+  color: #475569;
+}
+
+[data-theme="light"] .activeNode .nodeDate {
+  color: #0284C7;
+}
+
+[data-theme="light"] .spotlightCard {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(2, 132, 199, 0.25);
+  box-shadow: inset 0 0 20px rgba(2, 132, 199, 0.04), 0 20px 40px -15px rgba(7, 17, 31, 0.1);
+}
+
+[data-theme="light"] .roleTitle {
+  color: #07111F;
+}
+
+[data-theme="light"] .stepBtn {
+  background: rgba(7, 17, 31, 0.04);
+  border-color: rgba(7, 17, 31, 0.12);
+  color: #07111F;
+}
+
+[data-theme="light"] .highlightsBox {
+  background: rgba(7, 17, 31, 0.02);
+  border-color: rgba(7, 17, 31, 0.08);
+}
+
+[data-theme="light"] .techPill {
+  background: rgba(2, 132, 199, 0.06);
+  border-color: rgba(2, 132, 199, 0.2);
+  color: #334155;
+}
+
+[data-theme="light"] .quickCard {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(7, 17, 31, 0.08);
+}
+
+[data-theme="light"] .quickRole {
+  color: #07111F;
+}
+
+[data-theme="light"] .selectedQuickCard {
+  background: rgba(2, 132, 199, 0.08);
+  border-color: #0284C7;
+}
